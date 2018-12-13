@@ -3,6 +3,7 @@ module Spree
     translates :name, :description, :meta_title, :meta_description, :meta_keywords, :slug,
       fallbacks_for_empty_translations: true
 
+    extend FriendlyId
     friendly_id :slug_candidates, use: [:history, :globalize]
 
     include SpreeGlobalize::Translatable
