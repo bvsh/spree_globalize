@@ -47,9 +47,8 @@ module Spree
 
     def duplicate_translations(old_product)
       old_product.translations.each do |translation|
-        # translation.slug = nil # slug must be regenerated
-        translation.slug += "_"
-        self.translations << translation.dup
+        self.translations << (translation.dup.slug = nil)
+        
       end
     end
   end
