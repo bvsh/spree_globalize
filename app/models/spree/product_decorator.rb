@@ -20,7 +20,7 @@ module Spree
       after_destroy :punch_slug
 
       def punch_slug
-        update(slug: "#{Time.now.to_i}_#{slug}")
+        #update(slug: "#{Time.now.to_i}_#{slug}")
       end
     end
 
