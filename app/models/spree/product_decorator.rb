@@ -1,6 +1,6 @@
 module Spree
   Product.class_eval do
-    translates :name, :description, :meta_title, :meta_description, :meta_keywords,
+    translates :name, :description, :meta_title, :meta_description, :meta_keywords, :slug,
       fallbacks_for_empty_translations: true
 
     friendly_id :slug_candidates, use: [:history, :globalize]
@@ -20,7 +20,7 @@ module Spree
       after_destroy :punch_slug
 
       def punch_slug
-        #update(slug: "#{Time.now.to_i}_#{slug}")
+        update(slug: "#{Time.now.to_i}_#{slug}")
       end
     end
 
