@@ -42,6 +42,7 @@ module Spree
 
     def duplicate_extra(old_product)
       duplicate_translations(old_product)
+      self.slug = old_product.slug + "-" + rand(32**2).to_s(32)
     end
 
     private
